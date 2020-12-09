@@ -97,18 +97,24 @@ body {
 }
 .auth-nav {
   display: flex;
-
+  align-items: baseline;
   margin-left: auto;
 }
-.auth-nav .item + .item {
-  margin-left: 50px;
-}
-.auth-nav {
-  align-items: baseline;
-}
+
 .nav-icon {
   fill: currentColor;
   margin-right: 10px;
+}
+.envelope {
+  position: relative;
+  bottom: -1px;
+}
+.smartphone {
+  position: relative;
+  bottom: -2.5px;
+}
+.auth-nav .item + .item {
+  margin-left: 50px;
 }
 .nav-link:hover,
 .nav-link:focus,
@@ -164,7 +170,16 @@ body {
 /* секция особенности и чем мы занимаемся */
 
 .title {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .about-us,
 .team,
