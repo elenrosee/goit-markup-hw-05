@@ -88,13 +88,31 @@ body {
 .site-nav .item:not(:last-child) {
   margin-right: 50px;
 }
+.site-nav .item {
+  position: relative;
+}
+
 .nav-link {
   font-weight: 500;
   letter-spacing: 0.02em;
   display: flex;
+  padding: 32px 0;
 }
 .current.nav-link {
   color: var(--accent-color);
+}
+
+.current.nav-link::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  opacity: 1;
 }
 .contact-link {
   display: flex;
