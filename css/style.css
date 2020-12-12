@@ -13,7 +13,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--text-color-black);
+  color: inherit;
 }
 * {
   margin: 0;
@@ -54,16 +54,8 @@ body {
   color: var(--text-color-white);
 }
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 /*шапка сайта*/
 .page-header {
@@ -108,6 +100,8 @@ body {
   letter-spacing: 0.02em;
   display: flex;
   padding: 32px 0;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .current.nav-link {
   color: var(--accent-color);
@@ -131,6 +125,8 @@ body {
   letter-spacing: 0.02em;
   color: var(--text-color-grey);
   align-items: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav {
   display: flex;
@@ -150,7 +146,6 @@ body {
 .contact-link:focus,
 .icon-mail:hover {
   color: var(--accent-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* секция герой  */
@@ -341,11 +336,13 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover {
   color: var(--text-color-white);
   background-color: var(--accent-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .worker-social-links li:not(:last-child) {
   margin-right: 10px;
@@ -366,6 +363,9 @@ body {
   color: var(--icon-color);
   border-radius: 4px;
   background-position: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-logo {
   fill: currentColor;
@@ -373,7 +373,6 @@ body {
 .clients-link:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* футер */
@@ -424,22 +423,25 @@ body {
 }
 .social-links-list .instagram {
   background-image: url(../images/icons/instagram.svg);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links-list .twitter {
   background-image: url(../images/icons/twitter.svg);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links-list .facebook {
   background-image: url(../images/icons/facebook.svg);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links-list .linkedin {
   background-image: url(../images/icons/linkedin.svg);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links-list .instagram:hover,
 .social-links-list .twitter:hover,
 .social-links-list .facebook:hover,
 .social-links-list .linkedin:hover {
   background-color: var(--accent-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-links-list .item:not(:last-child) {
   margin-right: 10px;
@@ -454,6 +456,8 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   position: fixed;
@@ -499,6 +503,10 @@ body {
   border-radius: 4px;
   border: none;
   cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon:not(:last-child) {
   margin-right: 8px;
@@ -510,7 +518,6 @@ body {
   color: var(--text-color-white);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project {
   display: flex;
@@ -521,6 +528,8 @@ body {
   overflow: hidden;
   width: 370px;
   margin: 0px 30px 30px 0px;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .prject-img-text {
   display: flex;
@@ -539,23 +548,23 @@ body {
   padding: 63px 24px;
 
   transform: translateY(100%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project > .item:hover .pop-up-text,
 .project > .item:focus .pop-up-text {
   transform: translateY(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .project .item:nth-child(3n + 3) {
   margin-right: 0px;
 }
 .project .item:nth-last-child(-n + 3) {
   margin-bottom: 0px;
 }
-.project .item:hover {
+.project .item:hover,
+.project .item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project .content {
   border-bottom: 1px solid var(--border-color-projects);
